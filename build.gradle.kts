@@ -34,13 +34,10 @@ tasks.jextract {
         // The library name
         libraries = listOf("systemd")
 
-        includes = listOf("systemd/src/systemd/", "systemd/src/basic/", "systemd/src/fundamental/",)
+        includes = listOf("systemd/src/systemd/", "systemd/src/core/", "systemd/src/basic/", "systemd/src/fundamental/")
 
         // The package under which all source files will be generated
         targetPackage = "org.systemd"
-
-        // The generated class name
-        className = "SdBus"
     }
 }
 
