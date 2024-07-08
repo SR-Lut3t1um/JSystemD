@@ -19,6 +19,7 @@ public class SystemD implements AutoCloseable {
 
 	SystemD() {
 		arena = Arena.ofConfined();
+		bus = arena.allocate(C_POINTER);
 		dest = arena.allocateFrom("org.freedesktop.systemd1");
 		path = arena.allocateFrom("/org/freedesktop/systemd1");
 

@@ -2,7 +2,8 @@ package me.tobiasliese;
 
 import java.lang.foreign.MemorySegment;
 
-import static org.systemd.SD_Bus_1.C_CHAR;
+import static org.systemd.SystemD_1.C_CHAR;
+
 
 public class Util {
 	public static String readCString(MemorySegment memorySegment) {
