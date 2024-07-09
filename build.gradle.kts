@@ -30,12 +30,17 @@ tasks.jextract {
         // The generated class name
         className = "SdBus"
     }
-    header("systemd/src/libsystemd/sd-bus/bus-internal.h") { // fix path
+    header("systemd/src/libsystemd/sd-bus/bus-internal.h") {
         // The library name
         libraries = listOf("systemd")
 
-        includes = listOf("systemd/src/systemd/", "systemd/src/core/", "systemd/src/basic/", "systemd/src/fundamental/")
+        // whatever
+        includes = listOf( "systemd/src/systemd/", "systemd/src/core/", "systemd/src/basic/", "systemd/src/fundamental/")
 
+        definedMacros = listOf(
+            "SIZEOF_TIME_T=8",
+            "RELATIVE_SOURCE_PATH=\"${file("systemd/src").relativeTo(file("build/"))}\"",
+        )
         // The package under which all source files will be generated
         targetPackage = "org.systemd"
     }

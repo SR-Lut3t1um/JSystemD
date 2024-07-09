@@ -2,14 +2,10 @@ package me.tobiasliese;
 
 
 
-
-import org.systemd.SdBus;
-
 import java.lang.foreign.*;
 
 import static me.tobiasliese.Util.readCString;
 import static org.systemd.SdBus.*;
-import static org.systemd.SdBus_1.*;
 
 
 public class SystemD implements AutoCloseable {
