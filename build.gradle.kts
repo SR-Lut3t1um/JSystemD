@@ -35,11 +35,13 @@ tasks.jextract {
         libraries = listOf("systemd")
 
         // whatever
-        includes = listOf( "systemd/src/systemd/", "systemd/src/core/", "systemd/src/basic/", "systemd/src/fundamental/")
+        includes = listOf("systemd/src/systemd/", "systemd/src/core/", "systemd/src/basic/", "systemd/src/fundamental/")
 
         definedMacros = listOf(
             "SIZEOF_TIME_T=8",
             "RELATIVE_SOURCE_PATH=\"${file("systemd/src").relativeTo(file("build/"))}\"",
+            "HAVE_REALLOCARRAY=true",
+            "_GNU_SOURCE=true"
         )
         // The package under which all source files will be generated
         targetPackage = "org.systemd"

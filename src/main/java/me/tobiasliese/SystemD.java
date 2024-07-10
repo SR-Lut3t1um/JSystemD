@@ -2,6 +2,8 @@ package me.tobiasliese;
 
 
 
+import org.systemd.sd_bus;
+
 import java.lang.foreign.*;
 
 import static me.tobiasliese.Util.readCString;
@@ -31,7 +33,7 @@ public class SystemD implements AutoCloseable {
 	String[] getUnits() {
 		var intface = arena.allocateFrom("org.freedesktop.systemd1.Manager");
 		var member = arena.allocateFrom("GetUnits");
-		SD_BUS.
+		sd_bus bus = new sd_bus();
 		var ret_error = arena.allocate(MemoryLayout.structLayout(
 				C_POINTER,
 				C_POINTER
